@@ -55,29 +55,29 @@ A character class defines a set of characters. In the HTML regex, the below is t
 There are no flags specified in this regular expression.
 
 ### Grouping and Capturing
-The HTML regex: /^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/ is split up by three groups- each defined and split up by parenthesis ().
-Group 1- ([a-z]+)- THis group matches one or more lowercase letters between the opening < and the underscore _ character. This group captures the tag name of the HTML tag.
-Group 2- ([^<]+)- This group matches one or more characters that are not < between the underscore _ and the closing > tag. This group captures any attributes or other information between the tag name and the closing bracket.
-Group 3- (?:>(._)<\/\1>|\s+\/>)- This is a non capturing group that includes 2 alternatives:
-- Alternative 1: >(._)<\/\1>
-- Alternative 2: \s+\/>
+The HTML regex: `/^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/` is split up by three groups- each defined and split up by parenthesis ().
+Group 1- `([a-z]+)`- THis group matches one or more lowercase letters between the opening < and the underscore _ character. This group captures the tag name of the HTML tag.
+Group 2- `([^<]+)`- This group matches one or more characters that are not < between the underscore _ and the closing > tag. This group captures any attributes or other information between the tag name and the closing bracket.
+Group 3- `(?:>(._)<\/\1>|\s+\/>)`- This is a non capturing group that includes 2 alternatives:
+- Alternative 1: `>(._)<\/\1>`
+- Alternative 2: `\s+\/>`
 
 ### Bracket Expressions
 The bracket character [] represents anything inside the brackets is what we want to match- they outline the characters we want to include. Below are the bracket expressions in the html regex.
-- [a-z]+: matches one or more lowercase letters between the < and the underscore character.
-- [^<]+: matches one or more characters that are not < between the underscore and the > character
-- \s+: matches one or more whitespace characters before the /> closing sequence.
-- \/: matches a forward slash character /, which is used to close the opening HTML tag.
-- \1: a back reference to the first capturing group ([a-z]+), which matches the same text as previously matched by that group.
+- `[a-z]+`: matches one or more lowercase letters between the < and the underscore character.
+- `[^<]+`: matches one or more characters that are not < between the underscore and the > character
+- `\s+`: matches one or more whitespace characters before the /> closing sequence.
+- `\/`: matches a forward slash character /, which is used to close the opening HTML tag.
+- `\1`: a back reference to the first capturing group ([a-z]+), which matches the same text as previously matched by that group.
 
 ### Greedy and Lazy Match
 Quantifiers + and * are considered greedy, but adding a ? to them will make them lazy. 
 
 ### Back-references
-The regex /^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/ uses a back-reference in the form of \1. Using the back reference makes sure that the closing tag matches the opening tag in both name and order, and allows the regular expression to capture the contents of the tag if it is not self-closing.
+The regex `/^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/` uses a back-reference in the form of \1. Using the back reference makes sure that the closing tag matches the opening tag in both name and order, and allows the regular expression to capture the contents of the tag if it is not self-closing.
 
 ### Look-ahead and Look-behind
-The regex /^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/ does not use look ahead or look behind expressions.
+The regex `/^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/` does not use look ahead or look behind expressions.
 
 ## Author
 Toni Altendorf:
