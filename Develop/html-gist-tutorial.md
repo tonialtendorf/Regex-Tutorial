@@ -73,7 +73,6 @@ The bracket character [] represents anything inside the brackets is what we want
 ### Greedy and Lazy Match
 Quantifiers + and * are considered greedy, but adding a ? to them will make them lazy. 
 
-
 ### Back-references
 The regex /^<([a-z]+)([^<]+)_(?:>(._)<\/\1>|\s+\/>)$/ uses a back-reference in the form of \1. Using the back reference makes sure that the closing tag matches the opening tag in both name and order, and allows the regular expression to capture the contents of the tag if it is not self-closing.
 
