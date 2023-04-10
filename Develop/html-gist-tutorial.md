@@ -49,7 +49,7 @@ The OR operator specifies that the regular expression engine should match either
 
 ### Character Classes
 A character class defines a set of characters. In the HTML regex, the below is the character classes:
-- [^<]: this character class matches any character that is not a <. THis is because the < symbol is used to start an html tag
+- `[^<]`: this character class matches any character that is not a <. THis is because the < symbol is used to start an html tag
 
 ### Flags
 There are no flags specified in this regular expression.
